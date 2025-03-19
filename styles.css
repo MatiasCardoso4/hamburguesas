@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #161616;
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+h3 {
+  font-family: "Lobster", sans-serif;
+  letter-spacing: 1px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: whitesmoke;
+}
+
+#cart {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #22222266;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.row span {
+  font-size: 1.5rem;
+}
+
+button {
+  background: rgb(253, 141, 22);
+  border: none;
+  border-radius: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#cart-sidebar {
+display: flex;
+justify-content: center;
+}
+
+.cart-display-hide {
+  height: 100vh;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1rem;
+}
+
+#cart-items {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+
+.hidden {
+  display: none;
+}
+
+@media  screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  #cart-items {
+    flex-direction: row;
+  }
+
+}
