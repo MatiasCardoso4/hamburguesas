@@ -166,7 +166,7 @@ function updateCart() {
     button.innerText = 'Eliminar'
     button.classList.add('delete-btn')
     button.addEventListener('click', ()=>deleteProduct(item.id))
-    h3.textContent = `${item.name} - `;
+    h3.textContent = `${item.name}  `;
     span.textContent = `$${item.price.toFixed(2)}`;
     li.append(h3,span,button)
    cartItems.append(li);
