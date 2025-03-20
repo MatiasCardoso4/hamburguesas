@@ -12,6 +12,7 @@
 body {
   font-family: Arial, sans-serif;
   background: #161616;
+
   color: #fff;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -37,6 +38,10 @@ header {
   cursor: pointer;
 }
 
+#cart:hover {
+  color: orangered;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -53,7 +58,7 @@ header {
 .card {
   display: flex;
   flex-direction: column;
-  background:linear-gradient(rgb(52, 53, 52),rgb(119, 119, 121));
+  background: linear-gradient(rgb(52, 53, 52), rgb(119, 119, 121));
   padding: 15px;
   border-radius: 10px;
 }
@@ -65,7 +70,6 @@ header {
   margin-top: 20px;
 }
 
-
 button {
   background: rgb(193, 192, 191);
   border: none;
@@ -73,27 +77,26 @@ button {
   padding: 1rem 1.5rem;
   cursor: pointer;
   font-weight: bold;
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background: rgba(211, 210, 209, 0.647);
 }
 
 .cart-display-hide {
   position: absolute;
-  right: 0;
-  width: 22vw;
-  background-color: #151515cd;
+  width: 30%;
+  min-height: 100vh;
+  right: 8px;
+  background-color: whitesmoke;
+  color: #161616;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 1rem;
-}
-
-#cart-items {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 20px;
+  padding: 1.2rem;
+  border-radius: 6px;
+  margin-top: 20px;
 }
 
 .cart-item {
@@ -101,18 +104,31 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  border-bottom: 2px solid white;
-  padding-bottom: 1rem;
+  border-top: 2px solid #161616;
+  padding: 1rem 0;
 }
 
 .cart-item h3 {
   font-size: 1.2rem;
 }
 
+.cart-item img {
+  width: 200px;
+}
+
+.cart-item .delete-btn {
+  background-color: rgb(232, 21, 21);
+  color: whitesmoke;
+}
+
+.cart-item .delete-btn:hover {
+  background-color: rgba(232, 21, 21, 0.622);
+}
+
 #menu span {
   background-color: black;
   border-radius: 8px;
-  padding:  0.4rem;
+  padding: 0.4rem;
   height: 30px;
 }
 
@@ -120,20 +136,14 @@ button {
   display: none;
 }
 
-@media  screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+
   .container {
-    flex-direction: column;
+    padding: 0 1rem;
   }
 
-.cart-display-hide {
-  display: flex;
-  width: 100%;
-}
-
-  #cart-sidebar {
-    display: flex;
-    justify-content: center;
-  
+  .cart-display-hide {
+    width: 100%;
+    right: 0;
   }
-
 }

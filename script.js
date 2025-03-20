@@ -122,27 +122,29 @@ const checkoutOrder = document.getElementById("checkout");
 menuItems.forEach((item) => {
   const card = document.createElement("div");
   const h3 = document.createElement("h3");
+  const p = document.createElement('p')
   const span = document.createElement("span");
   const img = document.createElement("img");
   const button = document.createElement("button");
   const divRow = document.createElement("div");
 
-  button.addEventListener("click", () => addToCart(item.name, item.price,item.id));
+  button.addEventListener("click", () => addToCart(item.name,item.image, item.price,item.id));
 
   h3.textContent = `${item.name}`;
   span.textContent = `$${item.price}`;
   img.src = `${item.image}`;
   img.alt = `${item.name}`;
+  p.textContent = item.descripcion
   button.innerHTML = "Agregar";
   card.classList.add("card");
   divRow.classList.add("row");
   divRow.append(button, span);
-  card.append(h3, img, divRow);
+  card.append(h3, img, p, divRow);
   menuContainer.append(card);
 });
 
-function addToCart(name, price,id) {
-  cart.push({ name, price,id });
+function addToCart(name,image, price,id) {
+  cart.push({ name,image, price,id });
   updateCart();
 }
 
@@ -162,13 +164,16 @@ function updateCart() {
     li.classList.add('cart-item')
     const span = document.createElement("span");
     const h3 = document.createElement("h3");
+    const img = document.createElement('img')
     const button  =document.createElement('button')
     button.innerText = 'Eliminar'
     button.classList.add('delete-btn')
     button.addEventListener('click', ()=>deleteProduct(item.id))
     h3.textContent = `${item.name}  `;
     span.textContent = `$${item.price.toFixed(2)}`;
-    li.append(h3,span,button)
+    img.src = `${item.image}`
+    img.alt =`${item.name}`
+    li.append(h3,img,span,button)
    cartItems.append(li);
   });
   cartTotal.textContent = total.toFixed(2);
