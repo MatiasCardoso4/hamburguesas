@@ -84,6 +84,10 @@ button:hover {
   background: rgba(211, 210, 209, 0.647);
 }
 
+#cart-sidebar {
+  display: none;
+}
+
 .cart-display-hide {
   position: absolute;
   width: 30%;
@@ -132,18 +136,18 @@ button:hover {
   height: 30px;
 }
 
-.hidden {
-  display: none;
+aside#cart-sidebar.show {
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
-
-  .container {
-    padding: 0 1rem;
-  }
+header h1{
+  font-size: 0.7rem;
+}
 
   .cart-display-hide {
     width: 100%;
     right: 0;
+    top: 100px;
   }
 }

@@ -197,6 +197,6 @@ function sendCartToWhatsapp() {
 }
 
 cartButton.addEventListener("click", () =>
-  cartSidebar.classList.toggle("hidden")
+  cartSidebar.classList.toggle("show")
 );
 checkoutOrder.addEventListener("click", sendCartToWhatsapp);
